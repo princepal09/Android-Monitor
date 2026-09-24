@@ -1,8 +1,16 @@
 import express from "express";
 import os from "os";
+import cors from "cors"
 
 const app = express();
 const PORT = 3000;
+
+
+app.use(cors({
+  origin : "*",
+  credentials : true
+}))
+
 
 app.get("/api/system", (req, res) => {
   const cpus = os.cpus();

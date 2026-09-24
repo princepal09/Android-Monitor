@@ -21,7 +21,7 @@ function App() {
   const [system, setSystem] = useState<SystemInfo | null>(null);
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/system")
+    fetch("/api/system")
       .then((res) => res.json())
       .then((data) => setSystem(data))
       .catch((err) => console.error(err));
